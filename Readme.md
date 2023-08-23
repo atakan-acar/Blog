@@ -1,3 +1,24 @@
+# Blog Uygulamasý
+
+Bu proje, basit bir blog uygulamasýný tasarlamak ve geliþtirmek için yapýlandýrýlmýþtýr. Markdown formatýnda yazýlmýþ blog gönderilerini yönetmek için bir API sunmaktadýr.
+
+## Baþlangýç
+
+Aþaðýdaki adýmlarý izleyerek projeyi yerel geliþtirme ortamýnýza kurabilirsiniz.
+
+### Gereksinimler
+
+- .NET Core SDK
+- Bir veritabaný (örneðin, SQL Server)
+
+### Kurulum
+
+1. Projeyi bilgisayarýnýza kopyalayýn:
+
+   ```sh
+   git clone https://github.com/atakan-acar/Blog.git
+
+
 ## Domain-Driven Design (DDD) Yaklaþýmý
 
 Bu proje, Domain-Driven Design (DDD) prensiplerini temel alarak tasarlanmýþtýr. 
