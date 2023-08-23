@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blog.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,7 @@ namespace Blog.Infrastructure.Repositories.Blog
     public interface IBlogPostRepository
     {
         Task<IEnumerable<Domain.Entities.BlogPost>> BlogPostsAsync();
+
+        Task<bool> InsertAsync(BlogPost blogPost);
     }
 }

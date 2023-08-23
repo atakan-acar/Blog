@@ -20,5 +20,13 @@ namespace Blog.Infrastructure.Repositories.Blog
         {
             return await _dbContext.BlogPosts.ToListAsync();
         }
+
+        public async Task<bool> InsertAsync(BlogPost blogPost)
+        {
+            _dbContext.BlogPosts.Add(blogPost);
+            _dbContext.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

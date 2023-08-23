@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blog.Application.Dto.BlogPostDto;
+using Blog.Application.Services.BlogService;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Api.Controllers
 {
@@ -6,11 +8,18 @@ namespace Blog.Api.Controllers
     [Route("api")]
     public class BlogPostController : ControllerBase
     { 
+        private readonly IBlogService _blogService;
 
-        [HttpGet("blog-post")]
-        public async Task<IActionResult> GetAllBlogPosts()
+        public BlogPostController(IBlogService blogService)
         {
-            return Ok();
+            _blogService = blogService;
+        }
+
+        [HttpPost("post")]
+        public async Task<IActionResult> GetAllBlogPosts(BlogPostDto post)
+        {
+            var result = await _blogService.InsertAsync(post); 
+            return result ? Ok() : BadRequest() ;
         }
     }
 }
